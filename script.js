@@ -1,0 +1,2 @@
+
+// Script para funcionalidad futura
