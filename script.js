@@ -13,8 +13,18 @@ function renderUser(user) {
 }
 
 async function loadUser() {
-    const user = await fetchUser();
-    renderUser(user);
+    // Mostrar estado de carga
+    document.getElementById('user-name').textContent = 'Cargando...';
+    document.getElementById('user-email').textContent = '';
+    document.getElementById('user-location').textContent = '';
+    
+    try {
+        const user = await fetchUser();
+        renderUser(user);
+    } catch (error) {
+        document.getElementById('user-name').textContent = 'Error al cargar usuario';
+        console.error('Error:', error);
+    }
 }
 
 // Cargar usuario al iniciar la página
