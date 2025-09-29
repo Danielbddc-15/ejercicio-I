@@ -19,3 +19,8 @@ async function loadUser() {
 
 // Cargar usuario al iniciar la página
 window.onload = loadUser;
+
+// Agregar evento al botón para cargar nuevo usuario
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('refresh-btn').addEventListener('click', loadUser);
+});
